@@ -41,3 +41,11 @@ Thanks to the zillions of other boilerplates that I have used in the past. In pa
 
 - https://github.com/jsynowiec/node-typescript-boilerplate
 - https://github.com/metachris/typescript-boilerplate
+
+[nodejs]: https://nodejs.org/dist/latest-v18.x/docs/api/
+[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2018.12-blue.svg
+[typescript]: https://www.typescriptlang.org/
+[typescript-4-9]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/
+[ts-badge]: https://img.shields.io/badge/TypeScript-4.9-blue.svg
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[license]: https://github.com/firxworx/ts-node-boilerplate/blob/main/LICENSE
