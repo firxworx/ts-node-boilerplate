@@ -1,0 +1,59 @@
+# package managers
+.npm
+.pnp.*
+.pnp.cjs
+.yarn/*
+#!.yarn/cache # uncomment if using yarn zero-installs
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# environment
+.env
+/**/.env
+/**/.env.*
+!/**/.env.sample
+!/**/.env.example
+!/**/.env.test
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-error.log
+
+# dependencies
+node_modules
+**/node_modules/**
+
+# coverage
+coverage
+
+# build output
+build/
+dist/
+
+# ide - vscode
+.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ide - other popular ide's
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# optional eslint cache
+.eslintcache
+
+# misc system files
+.DS_Store
+Thumbs.db

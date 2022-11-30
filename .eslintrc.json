@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": 2022
+  },
+  "plugins": ["@typescript-eslint", "jest"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:jest/recommended", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        // warn on unused vars but disable warnings for any named with an underscore prefix e.g. `_unusedVariable`
+        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+
+        // reduce verbosity
+        "@typescript-eslint/no-inferrable-types": "off",
+
+        // require explicit function return types
+        "@typescript-eslint/explicit-function-return-type": "warn",
+
+        // allow empty interfaces to support consistency and differences of types vs. interfaces
+        "@typescript-eslint/no-empty-interface": "off"
+      }
+    }
+  ]
+}

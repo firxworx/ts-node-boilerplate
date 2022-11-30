@@ -1,0 +1,7 @@
+/**/*.js
+/build/**
+/dist/**
+/coverage/**
+/tmp/**
+.yarn
+.vscode
