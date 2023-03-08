@@ -1,8 +1,8 @@
-import { hello } from '../src/main'
+import main from '../src/main'
 
-describe('hello function', () => {
-  it('greets a user with `Hello, {name}` message', () => {
-    const result = hello('username')
+describe('main function', () => {
+  it('returns a string with the expected greeting', () => {
+    const result = main('username')
     expect(result).toBe(`hello, username, and hello world...`)
   })
 })
