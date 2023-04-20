@@ -1,21 +1,18 @@
 {
   "name": "ts-node-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Example <example@users.noreply.github.com>",
   "description": "TypeScript + NodeJS + Jest Boilerplate Project Starter",
   "type": "module",
   "engines": {
-    "node": ">= 18.12 <19"
-  },
-  "volta": {
-    "node": "18.12.1"
+    "node": ">= 18.12 <20"
   },
   "scripts": {
+    "cli": "tsx src/cli.ts",
+    "script": "tsx src/script.ts",
     "run:main": "node build/src/main.js",
-    "run:script": "ts-node-esm src/script.ts",
+    "run:script": "node src/script.ts",
     "run:cli": "node build/src/cli.js",
-    "script": "ts-node-esm src/script.ts",
-    "cli": "ts-node-esm src/cli.ts",
     "clean": "rimraf coverage build tmp",
     "prebuild": "pnpm run lint",
     "build": "tsc -p tsconfig.json",
@@ -43,6 +40,7 @@
     "ts-jest": "~29.1.0",
     "ts-node": "^10.9.1",
     "tsutils": "~3.21.0",
+    "tsx": "^3.12.6",
     "typescript": "~5.0.4"
   },
   "dependencies": {

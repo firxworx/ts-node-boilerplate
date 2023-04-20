@@ -12,7 +12,7 @@ The repo is ready to serve as a kickoff point for small projects including scrip
 
 This project uses ES Modules (ESM). If you require CommonJS you can convert this project or you may want to find a different boilerplate.
 
-The standard TypeScript compiler `tsc` is used. If `tsc` and `node` doesn't cut it for your use-case, [tsx](https://www.npmjs.com/package/tsx) is recommended: it is a fast esbuild-enhanced alternative.
+The standard TypeScript compiler `tsc` is used to build the project. [tsx](https://www.npmjs.com/package/tsx), a fast esbuild-enhanced alternative, is used to run TypeScript files directly (vs. `ts-node-esm` from the ts-node package).
 
 ## What's included
 
@@ -22,20 +22,18 @@ The `src/` folder features three basic examples for you to build on or delete:
 
 `src/main.ts`: for nodejs packages or libraries to compile with `tsc` and then run via `node`
 
-- build first: `pnpm build`
+- build first with `tsc`: `pnpm build`
 - run the compiled js using `node`: `pnpm run:main`
 
 `src/cli.ts`: for cli scripts powered by commander
 
-- execute via `ts-node-esm`: `pnpm cli [arguments] [options]` e.g. `pnpm cli example --foo --bar`
-- run compiled js: `pnpm run:cli`
+- execute using `tsx`: `pnpm cli [arguments] [options]` e.g. `pnpm cli example --foo --bar`
+- run compiled js using `node`: `pnpm run:cli`
 
 `src/script.ts`: for one-off scripts and experiments with an async `main()`
 
-- execute via `ts-node-esm`: `pnpm script`
-- run compiled js: `pnpm run:script`
-
-Note that the `ts-node-esm` command is shipped as part of the ts-node package.
+- execute using `tsx`: `pnpm script`
+- run compiled js using `node`: `pnpm run:script`
 
 ### Working example tests
 
@@ -51,9 +49,8 @@ The boilerplate code demonstrates a few key nuances of ESM including:
 
 - relative import paths require full extensions with `.js` vs. `.ts` to reflect the compiled output
 - certain global-like values including `__dirname` and `require()` cannot be used directly
-- the cli example demonstrates top-level `await` and is run using `ts-node-esm`
 
-Imports for jest tests are more lax per `verbatimModuleSyntax` set to `false` in `tsconfig.spec.json`.
+Imports for jest tests are more lax on the import requirements because the TypeScript 5.0+ `verbatimModuleSyntax` option is set to `false` in `tsconfig.spec.json`.
 
 ## How to use the boilerplate
 
@@ -83,7 +80,7 @@ Don't forget to:
 - review and tweak the `.gitignore` file to suit your needs
 - customize the typescript config in `tsconfig.json` and/or `tsconfig.release.json`
 
-The tsconfig extends `@tsconfig/node18-strictest-esm/tsconfig.json`. Read more about this configuration at <https://github.com/tsconfig/bases> and the package's [npm page](https://www.npmjs.com/package/@tsconfig/node18-strictest-esm).
+The tsconfig is reasonably strict and extends `@tsconfig/node18/tsconfig`, `@tsconfig/strictest/tsconfig`, and `@tsconfig/esm/tsconfig` (formerly `@tsconfig/node18-strictest-esm/tsconfig.json`). Read more about this configuration at <https://github.com/tsconfig/bases> and the package's [npm page](https://www.npmjs.com/package/@tsconfig/node18-strictest-esm).
 
 ## Development
 
@@ -108,8 +105,8 @@ In addition to those, the following scripts are defined in `package.json` to sup
 
 The following scripts run the project code:
 
-- `cli` - run the `src/cli.ts` example directly via `ts-node-ext`
-- `script` run the `src/script.ts` example directly via `ts-node-ext`
+- `cli` - run the `src/cli.ts` example directly using `tsx`
+- `script` run the `src/script.ts` example directly using `tsx`
 - `run:*` - replace `*` with `main`, `cli`, or `script` to run the compiled js using `node` (note: run `pnpm build` first)
 
 ## Acknowledgement
