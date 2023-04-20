@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "extends": ["@tsconfig/node18/tsconfig", "@tsconfig/strictest/tsconfig", "@tsconfig/esm/tsconfig"],
   "compilerOptions": {
     "strict": true,
     "alwaysStrict": true,
