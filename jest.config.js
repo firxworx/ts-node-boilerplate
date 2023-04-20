@@ -3,7 +3,7 @@ export default {
   testEnvironment: 'node',
   preset: 'ts-jest/presets/default-esm',
   transform: {
-    '^.+\\.m?[t]s?$': ['ts-jest', { useESM: true }],
+    '^.+\\.m?[t]s?$': ['ts-jest', { useESM: true, tsconfig: 'tsconfig.spec.json' }],
   },
   transformIgnorePatterns: [],
   extensionsToTreatAsEsm: ['.ts'],
