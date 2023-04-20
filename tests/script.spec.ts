@@ -1,6 +1,6 @@
-import { main } from '../src/cli'
+import { main } from '../src/script'
 
-describe('Some behavior that will log', () => {
+describe('script.ts log to console', () => {
   // save a reference to console.log
   const log = console.log
 
@@ -14,7 +14,7 @@ describe('Some behavior that will log', () => {
     console.log = log
   })
 
-  test('some log', async () => {
+  test('logs hello world', async () => {
     await main()
     return expect(console.log).toHaveBeenCalledWith(expect.stringContaining('hello world'))
   })

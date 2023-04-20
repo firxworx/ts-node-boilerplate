@@ -1,4 +1,4 @@
-import { mockAsync } from '../src/lib/example'
+import { mockAsync } from '../src/lib/mocks'
 import main from '../src/main'
 
 describe('main function', () => {
