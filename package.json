@@ -11,7 +11,10 @@
     "node": "18.12.1"
   },
   "scripts": {
-    "start": "node build/src/main.js",
+    "run:main": "node build/src/main.js",
+    "run:script": "ts-node-esm src/script.ts",
+    "run:cli": "node build/src/cli.js",
+    "script": "ts-node-esm src/script.ts",
     "cli": "ts-node-esm src/cli.ts",
     "clean": "rimraf coverage build tmp",
     "prebuild": "pnpm run lint",
