@@ -1,4 +1,4 @@
-import { getGreeting } from './lib/example.js'
+import { getGreeting } from './lib/greetings.js'
 
 /**
  * Replace with your implementation.
